@@ -1,0 +1,9 @@
+h1{
+    font-size: 30px;
+    color: white;
+}
+#animalNotifcationbtn{
+    background-color: rgb(72, 255, 0);
+    height: 50px;
+    width: 100px;
+}
