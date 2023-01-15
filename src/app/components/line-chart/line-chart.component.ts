@@ -62,8 +62,8 @@ export class LineChartComponent implements OnInit {
     });
   }
   private getMonthName(date: Date): string {
-    const months = ['January', 'February', 'March', 'April', 'May', 'June',
-                    'July', 'August', 'September', 'October', 'November', 'December'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   
     const monthIndex = date.getMonth();  // Gets the month (0-11)
   
@@ -72,8 +72,8 @@ export class LineChartComponent implements OnInit {
 
   private getDayOfWeekName(index: number): string
   {
-    const weeks = ["Sunday", "Monday", "Tuesday", "Wednesday",
-    "Thursday", "Friday", "Saturday"];
+    const weeks = ["Sun", "Mon", "Tues", "Wed",
+    "Thur", "Fri", "Sat"];
 
     return weeks[index];
 

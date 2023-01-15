@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
+import { MainNavComponent } from './components/main-nav/main-nav.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { LineChartComponent } from './components/line-chart/line-chart.component
     TestComponent,
     HomeComponent,
     BarChartComponent,
-    LineChartComponent
+    LineChartComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,

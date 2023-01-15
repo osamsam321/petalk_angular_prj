@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { TestInterface } from './TestInterface';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 
@@ -11,15 +11,26 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http
 export class TestComponent implements OnInit {
   // url = "http://localhost:8002/petalk/saveUser";
   url = "http://Odi-Room-Desktop:8002/petalk/saveUser";
+  @ViewChild('testdiv', {static : true}) nav_route_selection_el: ElementRef<HTMLDivElement>;
 
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private renderer: Renderer2, nav_route_selection_el: ElementRef<HTMLDivElement>  ) { 
+    // this.nav_route_selection_el = {} as ElementRef;
+     this.nav_route_selection_el = nav_route_selection_el;
+
+  }
 
   ngOnInit(): void {
- 
+
+  }
+  ngAfterViewInit()
+  {
+
+
   }
 
   sendTestAnimalNotification(){
+
     let body = new FormData();
     let fullBodyData = {
 
