@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { TestInterface } from './TestInterface';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from "@angular/common/http";
 
 
 @Component({
@@ -10,7 +10,10 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http
 })
 export class TestComponent implements OnInit {
   // url = "http://localhost:8002/petalk/saveUser";
-  url = "http://Odi-Room-Desktop:8002/petalk/saveUser";
+  host = 'deeshub1';
+  url = "http://" + this.host + ":8002/petalk/saveUser";
+  url2 = "http://" + this.host + ":8002/petalk/savePet/";
+
   @ViewChild('testdiv', {static : true}) nav_route_selection_el: ElementRef<HTMLDivElement>;
 
   
@@ -28,8 +31,45 @@ export class TestComponent implements OnInit {
 
 
   }
+  sentPetAnimalNotifcation()
+  {
+    let body = new FormData;
+    let fullBodyData = {
+     
 
-  sendTestAnimalNotification(){
+  "id": 10,
+  "pet_name": "Fluffy",
+  "pet_weight": 5.5,
+  "weight_uom_abbr": "kg",
+  "pet_height": 20.0,
+  "pet_width": 15.0,
+  "pet_length": 30.0,
+  "lwh_uom_abbr": "cm",
+  "species": "Cat"
+ 
+  
+}
+  console.log("body: " + body);
+
+  let headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin':'http://localhost:4200/test'
+
+  });
+
+ 
+  this.http.post<TestInterface>(this.url2 + "1", fullBodyData,  { headers: headers}).subscribe(
+    () => {
+        console.log("send test animal notification data");
+        (error: HttpErrorResponse) => {
+          alert(error.message);
+        }
+    } 
+  );;
+
+}
+  
+sendTestUserNotification(){
 
     let body = new FormData();
     let fullBodyData = {
@@ -66,10 +106,35 @@ export class TestComponent implements OnInit {
           "upc_value": "999999999999923",
           "users":[],
           "pets": [],
-          "petalkDeviceTrigger":[]
+          "petalkDeviceTriggers":[
+            {
+  
+              "trigger_ts": "2023-02-19T12:34:56",
+              "device_name": "Animal_Wants_Water",
+              "petalkTriggerLocation": {
+                "location_name": "5050 test grove"
+              }
+
+            
+
+            }
+
+          ]
       }
       ],
-      "petsOwnedByUsers": [],
+      "petsOwnedByUsers": [
+        {
+          "pet_name": "Max",
+          "pet_weight": 20.5,
+          "weight_uom_abbr": "lb",
+          "pet_height": 20.2,
+          "pet_width": 20.1,
+          "pet_length": 20.3,
+          "lwh_uom_abbr": "in",
+          "species": "yellow lab",
+           
+      }
+      ],
       "purchaseAudit": []
       }
     body.append("email", "Js@example.com");

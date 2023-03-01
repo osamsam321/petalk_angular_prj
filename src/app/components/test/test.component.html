@@ -1,4 +1,4 @@
-
+<!-- 
 <h1 id="test"> </h1>
 
 <section style="background-color: transparent;">
@@ -10,12 +10,15 @@
 <section id="petalk_board_section"> 
     <div id="petalk_board"> 
       <div id="petalk_board_top_container"> 
-        <img id="animal_animated_img">
-        <h3 id="petalk_event_type"> </h3>
-        <img id="animal_real_img">
+        <img id="animal_img_png" #animalImagePng>
+        <h3 id="petalk_animal_name" #animalName> </h3>
+
 
       </div> 
-      <div id="petalk_board_mid_container"> <h4 id="description"> </h4> </div>
+      <div id="petalk_board_mid_container"> <h4 id="description"> </h4> 
+        <div> <h2 id="petalk_event_name"> </h2></div>
+      
+      </div>
       <div id="petalk_board_btm_container">
             <h5 id="time_event"> </h5>
 
@@ -23,8 +26,10 @@
 
     </div>
 
-</section>
-<button id = 'animalNotifcationbtn' (click)="sendTestAnimalNotification()"> Click To Send Animal Notification </button>
+</section> -->
+<button id = 'userNotifcationbtn' (click)="sendTestUserNotification()"> Click To create new user with full data</button>
+<button id = 'petNotifcationbtn' (click)="sentPetAnimalNotifcation()"> Click To create a new pet for user 1</button>
+
 
 
 

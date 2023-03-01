@@ -10,6 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
+import { NewPetalkComponent } from './components/new-petalk/new-petalk.component';
+import { PetEventBoxSimpleComponent } from './components/pet-event-box-simple/pet-event-box-simple.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { MainNavComponent } from './components/main-nav/main-nav.component';
 
 
 @NgModule({
@@ -19,7 +23,9 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
     HomeComponent,
     BarChartComponent,
     LineChartComponent,
-    MainNavComponent
+    MainNavComponent,
+    NewPetalkComponent,
+    PetEventBoxSimpleComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,10 +42,16 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
         component: HomeComponent
       },
       {
+        path: 'new-petalk',
+        component: NewPetalkComponent
+      },
+      {
         path: '**',
         component: TestComponent
       }
-    ])
+      
+    ]),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

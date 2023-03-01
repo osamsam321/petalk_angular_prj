@@ -13,4 +13,37 @@ body {
     align-items: center;
   }
 
+  h1{
+    font-size: 30px;
+    color: red;
+}
+#animalNotifcationbtn{
+    background-color: rgb(72, 255, 0);
+    height: 50px;
+    width: 100px;
+}
+#petalk_board_section
+{
+    display: flex;
+    justify-content: center;
+}
+#petalk_board
+{
+    width: 900px;
+    height: 500px;
+    background-color:rgba(35, 199, 185, 0.8);
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+.flex_box_center
+{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+#pet_event_section{
+  margin-top: 15%;
+
+}
   
