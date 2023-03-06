@@ -110,12 +110,14 @@ sendTestUserNotification(){
             {
   
               "trigger_ts": "2023-02-19T12:34:56",
-              "device_name": "Animal_Wants_Water",
+              "device_name": "test",
+              "triggerType": "wants_water",
+              "pet_name": "max",
               "petalkTriggerLocation": {
-                "location_name": "5050 test grove"
-              }
+              "location_name": "5050 test grove"
+              
 
-            
+              }
 
             }
 

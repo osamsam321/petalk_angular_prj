@@ -12,6 +12,7 @@ import { LineChartComponent } from './components/line-chart/line-chart.component
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { NewPetalkComponent } from './components/new-petalk/new-petalk.component';
 import { PetEventBoxSimpleComponent } from './components/pet-event-box-simple/pet-event-box-simple.component';
+import {PetEventAudit} from './components/pet-event-box-simple/pet-event-box-simple.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { MainNavComponent } from './components/main-nav/main-nav.component';
 
@@ -25,7 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LineChartComponent,
     MainNavComponent,
     NewPetalkComponent,
-    PetEventBoxSimpleComponent,
+    PetEventBoxSimpleComponent
   ],
   imports: [
     BrowserModule,
