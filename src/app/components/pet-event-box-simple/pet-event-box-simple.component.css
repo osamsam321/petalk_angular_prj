@@ -1,0 +1,86 @@
+#animalNotifcationbtn{
+    background-color: rgb(72, 255, 0);
+    height: 50px;
+    width: 100px;
+}
+#petalk_board_section
+{
+    display: flex;
+    justify-content: center;
+}
+#petalk_board
+{
+    width: 1200px;
+    height: 500px;
+    background-color:rgba(35, 199, 185, 0.8);
+    display: block;
+    border-radius: 20px;
+    margin-top: 0px !important;
+}
+
+ /* Google Fonts - Poppins */
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+ *{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+ }
+ body{
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #EFEFEF;
+ }
+ .slide-container{
+   max-width: 1120px;
+   width: 100%;
+   padding: 40px 0;
+ }
+ .ngb_car
+ {
+
+ }
+
+#petalk_animal_name
+{
+  color: white;
+}
+#animal_img_png
+{
+  border-radius: 60px;
+  height: 200px;
+  width: 200px;
+}
+#petalk_board_top_container
+{
+  display: flex;
+  justify-content: left;
+  background-color: transparent;
+  width: 100%;
+  height: 40%;
+  margin-top: 0px !important;
+}
+#petalk_board_mid_container
+{
+  background-color: transparent;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#petalk_animal_name
+{
+  margin-left: 30%;
+}
+#petalk_board_nothing
+{
+  width: 1200px;
+  height: 500px;
+  background-color:rgba(35, 199, 185, 0.8);
+  margin-top: 0px !important;
+  border-radius: 20px;
+  display: hidden;
+}

@@ -1,0 +1,67 @@
+
+<section id="petalk_board_section">
+
+  <ngb-carousel  class="ngb_car"  >
+    <ng-template ngbSlide *ngFor="let petEventAudit of petEventAuditList">
+
+      <div class="picsum-img-wrapper">
+        <div #petalk_board id="petalk_board" > 
+          <div id="petalk_board_top_container"> 
+            <img id="animal_img_png" src="../../../assets/img/test_img/download.jpeg">
+            <h2 id="petalk_animal_name"> {{ petEventAudit.pet_name}}</h2>
+      
+          </div> 
+
+          <div id="petalk_board_mid_container"> <h4 id="description"> </h4> 
+            <div> <h2 id="petalk_event_name"> {{petEventAudit.event_name}}</h2></div>
+          
+          </div>
+
+          <div id="petalk_board_btm_container">
+                <h5 id="time_event"> </h5>
+                
+      
+          </div>
+      
+        </div>
+
+
+        
+        <!-- <img [src]="images[0]" alt="Random first slide" /> -->
+      </div>
+      <div class="carousel-caption">
+
+      </div>
+    
+    </ng-template>
+
+  </ngb-carousel>
+  </section>
+  
+  <div #petalk_board_nothing id="petalk_board_nothing" > 
+
+    <div> <h2 > No Pet Event</h2></div>
+     
+  </div>
+ 
+<!-- <section id="petalk_board_section"> 
+    <div id="petalk_board"> 
+      <div id="petalk_board_top_container"> 
+        <img id="animal_img_png" #animalImagePng>
+        <h3 id="petalk_animal_name" #animalName> </h3>
+  
+  
+      </div> 
+      <div id="petalk_board_mid_container"> <h4 id="description"> </h4> 
+        <div> <h2 id="petalk_event_name"> </h2></div>
+      
+      </div>
+      <div id="petalk_board_btm_container">
+            <h5 id="time_event"> </h5>
+            
+  
+      </div>
+  
+    </div>
+  
+  </section>  -->
