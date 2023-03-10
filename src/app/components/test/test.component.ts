@@ -31,13 +31,82 @@ export class TestComponent implements OnInit {
 
 
   }
+  sentNewDeviceTriggerNotification()
+  {
+    const petNames: string[] = [
+      "Buddy",
+      "Charlie",
+      "Lucy",
+      "Max",
+      "Molly",
+      "Bailey",
+      "Sadie",
+      "Daisy",
+      "Rocky",
+      "Lola",
+      "Zoe",
+      "Chloe",
+      "Coco",
+      "Roxy",
+      "Ginger",
+      "Oliver",
+      "Leo",
+      "Milo",
+      "Smokey",
+      "Shadow"
+    ];
+
+    const petBreeds: string[] = [
+      'Labrador Retriever',
+      'Golden Retriever',
+      'Poodle',
+      'Persian',
+      'Siamese',
+      'Bengal',
+      'Parakeet',
+      'Cockatiel',
+      'Hamster',
+      'Guinea Pig',
+    ];
+    
+    const petalk_trigger: string[] = ["wants_water", "wants_food", "wants_to_play", "bored", "wants toy"];
+    let url3 = "http://" + this.host + ":8002/petalk/new/petalkEventTrigger/"
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin':'http://localhost:4200/test'
+  
+    });
+
+    let body = new FormData;
+    let fullBodyData = {
+
+        "trigger_ts": "2023-02-19T12:34:56",
+        "device_name": "test",
+        "triggerType": petalk_trigger[Math.floor(Math.random() * petalk_trigger.length)],
+        "pet_name": petNames[Math.floor(Math.random() * petNames.length)],
+        "petalkTriggerLocation": {
+        "location_name": "5050 test grove"
+        
+        }
+
+    }
+    
+    this.http.post<TestInterface>(url3 + "1", fullBodyData,  { headers: headers}).subscribe(
+      () => {
+          console.log("send test animal notification data");
+          (error: HttpErrorResponse) => {
+            alert(error.message);
+          }
+      } 
+    );;
+  }
   sentPetAnimalNotifcation()
   {
     let body = new FormData;
     let fullBodyData = {
      
 
-  "id": 10,
+
   "pet_name": "Fluffy",
   "pet_weight": 5.5,
   "weight_uom_abbr": "kg",
@@ -72,6 +141,43 @@ export class TestComponent implements OnInit {
 sendTestUserNotification(){
 
     let body = new FormData();
+    const petNames: string[] = [
+      "Buddy",
+      "Charlie",
+      "Lucy",
+      "Max",
+      "Molly",
+      "Bailey",
+      "Sadie",
+      "Daisy",
+      "Rocky",
+      "Lola",
+      "Zoe",
+      "Chloe",
+      "Coco",
+      "Roxy",
+      "Ginger",
+      "Oliver",
+      "Leo",
+      "Milo",
+      "Smokey",
+      "Shadow"
+    ];
+
+    const petBreeds: string[] = [
+      'Labrador Retriever',
+      'Golden Retriever',
+      'Poodle',
+      'Persian',
+      'Siamese',
+      'Bengal',
+      'Parakeet',
+      'Cockatiel',
+      'Hamster',
+      'Guinea Pig',
+    ];
+    
+    const petalk_trigger: string[] = ["wants_water", "wants_food", "wants_to_play", "bored", "wants toy"];
     let fullBodyData = {
 
       "first_name": "tim",
@@ -111,8 +217,8 @@ sendTestUserNotification(){
   
               "trigger_ts": "2023-02-19T12:34:56",
               "device_name": "test",
-              "triggerType": "wants_water",
-              "pet_name": "max",
+              "triggerType": petalk_trigger[Math.floor(Math.random() * petalk_trigger.length)],
+              "pet_name": petNames[Math.floor(Math.random() * petNames.length)],
               "petalkTriggerLocation": {
               "location_name": "5050 test grove"
               
@@ -133,7 +239,7 @@ sendTestUserNotification(){
           "pet_width": 20.1,
           "pet_length": 20.3,
           "lwh_uom_abbr": "in",
-          "species": "yellow lab",
+          "species": petBreeds[Math.floor(Math.random() * petBreeds.length)],
            
       }
       ],

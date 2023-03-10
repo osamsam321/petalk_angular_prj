@@ -12,6 +12,12 @@ h1{
     height: 50px;
     width: 100px;
 }
+#petalkDeviceTriggerbtn
+{
+    background-color: rgb(72, 255, 0);
+    height: 50px;
+    width: 100px;
+}
 #petalk_board_section
 {
     display: flex;

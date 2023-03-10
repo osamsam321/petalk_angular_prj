@@ -14,6 +14,8 @@ import { NewPetalkComponent } from './components/new-petalk/new-petalk.component
 import { PetEventBoxSimpleComponent } from './components/pet-event-box-simple/pet-event-box-simple.component';
 import {PetEventAudit} from './components/pet-event-box-simple/pet-event-box-simple.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { YourPetCarouselComponent } from './components/your-pet-carousel/your-pet-carousel.component';
+import LoginComponent from './components/login/login.component';
 // import { MainNavComponent } from './components/main-nav/main-nav.component';
 
 
@@ -26,7 +28,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LineChartComponent,
     MainNavComponent,
     NewPetalkComponent,
-    PetEventBoxSimpleComponent
+    PetEventBoxSimpleComponent,
+    YourPetCarouselComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
       },
       {
         path: '**',
-        component: TestComponent
+        component: HomeComponent
       }
       
     ]),
