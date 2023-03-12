@@ -17,6 +17,12 @@ body {
     font-size: 30px;
     color: red;
 }
+.basic_general_flex
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #animalNotifcationbtn{
     background-color: rgb(72, 255, 0);
     height: 50px;

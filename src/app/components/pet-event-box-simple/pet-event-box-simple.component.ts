@@ -44,15 +44,7 @@ export class PetEventBoxSimpleComponent implements OnInit, AfterViewInit{
     this.updatePetEventAuditList();
   }
   ngOnInit(): void {
-      this.petalk_user = {
-        id: 0,
-        first_name: '',
-        last_name: '',
-        email: '',
-        username: '',
-        petalkDevices: new Set<PetalkDevice>(),
-        petsOwnedByUsers: new Set<Pet>()
-      };
+
   }
   ngAfterViewInit()
   {
@@ -93,7 +85,7 @@ export class PetEventBoxSimpleComponent implements OnInit, AfterViewInit{
     // console.log("response details " + userData.first_name+ " " + userData.petalkDevices.values + userData.petsOwnedByUsers.values);
     console.log("userdate from the home obj " + this.petalk_user.first_name+ " " + this.petalk_user.petalkDevices.values + this.petalk_user.petsOwnedByUsers.values);
     }
-    
+
     
     public display_petalk_event_empty_board()
     {

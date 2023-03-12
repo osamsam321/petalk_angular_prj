@@ -1,15 +1,12 @@
 
-<section style="background-color: transparent;">
+<section class = 'basic_general_flex'>
   <!-- <app-line-chart style="width: 100%; height: 50vh;"></app-line-chart> -->
-  <div id="your_animal_section">
-    
-
-  </div>
+  <app-your-pet-carousel [petalk_user] = petalk_user> </app-your-pet-carousel>
 
 </section>
 <section id="pet_event_section">
   <div class="flex_box_center">
-    <app-pet-event-box-simple    [petalk_user] = petalk_user> 
+    <app-pet-event-box-simple [petalk_user] = petalk_user> 
    
 
     </app-pet-event-box-simple>

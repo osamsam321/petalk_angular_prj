@@ -1,18 +1,27 @@
-<ngb-carousel  class="ngb_car"  >
-    <ng-template>
 
-      <div class="picsum-img-wrapper">
+<div id = 'ngb_car_wrap' #ngb_carousel_wrap> 
+
+    <ngb-carousel  class="ngb_car"  >
+        <ng-template ngbSlide *ngFor="let pet of petalk_pets" >
+
+          <div class="picsum-img-wrapper">
+            
+              <div id="your_pet_box_container" >
+                  <img id="petImage"> 
+                  <h2 id = 'pet_name' #pet_name> {{pet.pet_name}} </h2>
+
+              </div>
+
+
+            
+            <!-- <img [src]="images[0]" alt="Random first slide" /> -->
+          </div>
+          <div class="carousel-caption">
+
+          </div>
         
+        </ng-template>
 
+      </ngb-carousel>
+</div>
 
-
-        
-        <!-- <img [src]="images[0]" alt="Random first slide" /> -->
-      </div>
-      <div class="carousel-caption">
-
-      </div>
-    
-    </ng-template>
-
-  </ngb-carousel>

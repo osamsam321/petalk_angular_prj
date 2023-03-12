@@ -1,0 +1,16 @@
+#your_pet_box_container
+{
+    background-color: red;
+    width:1000px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#ngb_car_wrap
+{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
