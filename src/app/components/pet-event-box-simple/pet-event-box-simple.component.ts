@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, Injectable, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, Injectable, OnInit, Renderer2, ViewChild } from '@angular/core';
 import {PetalkDeviceTrigger, User} from './PetEventBoxSimpleInterface'
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import {PetEventBoxSimpleService} from "./PetEventBoxSimpleService"
@@ -14,7 +14,7 @@ import { catchError, throwError } from 'rxjs';
   templateUrl: './pet-event-box-simple.component.html',
   styleUrls: ['./pet-event-box-simple.component.css', './swiper-bundle.min.css']
 })
-export class PetEventBoxSimpleComponent implements OnInit {
+export class PetEventBoxSimpleComponent implements AfterViewInit {
   images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
   http: any;
   pet_names = [''];
@@ -24,31 +24,28 @@ export class PetEventBoxSimpleComponent implements OnInit {
   test = 'hello'
   @ViewChild('animalName', {static : true}) pet_name_el: ElementRef<HTMLHeadingElement>;
   renderer2: Renderer2;
-  @ViewChild('petalk_board_nothing', {static : false}) petalk_board_nothing: ElementRef;
-  @ViewChild('carousel', {static : false}) carousel: ElementRef;
+  @ViewChild('petalk_board_nothing') petalk_board_nothing_el!: ElementRef;
+  @ViewChild('ngb_carousel_wrap') ngb_carousel_wrap_el!: ElementRef;
+
+  // carousel!: ElementRef;
+
   // @ViewChild('pRef', {static: false}) pRef: ElementRef;
 
 
 
-  constructor(private PetEventBoxSimpleService:PetEventBoxSimpleService, pet_name: ElementRef<HTMLHeadingElement>, 
-    petalk_board_nothing: ElementRef<HTMLDivElement>, carousel: ElementRef<HTMLDivElement>,renderer2: Renderer2) { 
+  constructor(private PetEventBoxSimpleService:PetEventBoxSimpleService, pet_name: ElementRef<HTMLHeadingElement>, carousel: ElementRef, 
+  renderer2: Renderer2) { 
     this.renderer2 = renderer2;
     this.pet_name_el= pet_name;
-    this.petalk_board_nothing = petalk_board_nothing;
-    this.carousel = carousel;
 
   }
+  
   ngOnChanges(): void{
   }
-  ngOnInit(): void {
-     console.log('Hello ', this.carousel.nativeElement.innerHTML); 
-    
-     this.getPet();
-  }
-  
+ 
   ngAfterViewInit()
   {
-    // this.getPet();
+      this.getPet();
   }
   handleError(error: any) {
     // const myParagraphRef = this.elementRef.nativeElement.querySelector('#myParagraph');
@@ -62,8 +59,7 @@ export class PetEventBoxSimpleComponent implements OnInit {
   
   public getPet()
   {
-    console.log('start ', this.carousel.nativeElement.innerHTML); 
-    
+    this.display_petalk_event_empty_board();
     let should_petalk_event_display = true;
     let url = "http://localhost/petalk/pet/name/{id}";
     
@@ -77,6 +73,7 @@ export class PetEventBoxSimpleComponent implements OnInit {
     .subscribe(
         (userData: User) => {
            this.user_data= userData;
+           
            console.log("userdata info {}", userData.email);
            let petalk_devices = Array.from(this.user_data.petalkDevices);
            console.log("test" + Array.from(petalk_devices[0].device_name));
@@ -90,25 +87,11 @@ export class PetEventBoxSimpleComponent implements OnInit {
                   this.petEventAuditList.push(new PetEventAudit(tmp_triggers[j].pet_name,tmp_triggers[j].triggerType));
                 }
               }
-              this.renderer2.setStyle(this.carousel.nativeElement, 'display', 'block' );
-              this.renderer2.setStyle(this.petalk_board_nothing.nativeElement, 'display', 'none' );
+              this.display_petalk_event_board();
           console.log("response details " + userData.first_name+ " " + userData.petalkDevices.values + userData.petsOwnedByUsers.values);
-          // this.renderer2.appendChild(this.pet_name_el.nativeElement, this.renderer2.createText(pet_name_str));
         },
-        
-        
-        // (error: HttpErrorResponse) => {
-        //   console.log("url has a issue");
-        //   should_petalk_event_display = false;
-        //   display_petalk_event_empty_board();
-        // }
 
-        
       )
-      // this.renderer2.setStyle(this.petalk_board_nothing.nativeElement, 'display', 'none' );
-      // this.renderer2.setStyle(this.petalk_board.nativeElement, 'display', 'block' );
-      // this.renderer2.setStyle(this.petalk_board.nativeElement, 'display', 'none' );
-      // this.renderer2.setStyle(this.petalk_board_nothing.nativeElement, 'display', 'block' );
       console.log("done");
   
      
@@ -117,13 +100,13 @@ export class PetEventBoxSimpleComponent implements OnInit {
     
     public display_petalk_event_empty_board()
     {
-      this.renderer2.setStyle(this.carousel.nativeElement, 'display', 'none' );
-      this.renderer2.setStyle(this.petalk_board_nothing.nativeElement, 'display', 'block' );
+      this.renderer2.setStyle(this.ngb_carousel_wrap_el.nativeElement, 'display', 'none' );
+      this.renderer2.setStyle(this.petalk_board_nothing_el.nativeElement, 'display', 'flex' );
     }
     public display_petalk_event_board()
     {
-      this.renderer2.setStyle(this.carousel.nativeElement, 'display', 'block' );
-      this.renderer2.setStyle(this.petalk_board_nothing.nativeElement, 'display', 'none' );
+      this.renderer2.setStyle(this.ngb_carousel_wrap_el.nativeElement, 'display', 'flex' );
+      this.renderer2.setStyle(this.petalk_board_nothing_el.nativeElement, 'display', 'none' );
     }
 
 }
