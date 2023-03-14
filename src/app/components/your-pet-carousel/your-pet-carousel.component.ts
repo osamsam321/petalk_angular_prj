@@ -10,6 +10,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap/carousel/carousel.
 })
 export class YourPetCarouselComponent implements OnInit, OnChanges, AfterViewInit{
   @Input() petalk_user!: User;
+  public has_pets: boolean = false;
   petalk_pets: PetalkPet[] = [];
   constructor() { }
   ngAfterViewInit(): void {
@@ -28,6 +29,9 @@ export class YourPetCarouselComponent implements OnInit, OnChanges, AfterViewIni
     for (const pet of pets) {
       this.petalk_pets.push(new PetalkPet(pet.pet_name));
     }
+
+    if(pets != null && pets != undefined && pets.length > 0)
+      this.has_pets = true;
   }
 
 

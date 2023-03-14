@@ -16,6 +16,9 @@ import {PetEventAudit} from './components/pet-event-box-simple/pet-event-box-sim
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { YourPetCarouselComponent } from './components/your-pet-carousel/your-pet-carousel.component';
 import LoginComponent from './components/login/login.component';
+import { PetalkCalendarComponent } from './components/petalk-calendar/petalk-calendar.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+
 // import { MainNavComponent } from './components/main-nav/main-nav.component';
 
 
@@ -30,13 +33,15 @@ import LoginComponent from './components/login/login.component';
     NewPetalkComponent,
     PetEventBoxSimpleComponent,
     YourPetCarouselComponent,
-    LoginComponent
+    LoginComponent,
+    PetalkCalendarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    FullCalendarModule,
     RouterModule.forRoot([
       {
         path: 'test',
@@ -45,6 +50,10 @@ import LoginComponent from './components/login/login.component';
       {
         path: 'home',
         component: HomeComponent
+      },
+      {
+        path: 'petalk_calendar',
+        component: PetalkCalendarComponent
       },
       {
         path: 'new-petalk',

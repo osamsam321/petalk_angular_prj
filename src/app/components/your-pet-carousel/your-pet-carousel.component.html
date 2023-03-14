@@ -1,8 +1,9 @@
 
 <div id = 'ngb_car_wrap' #ngb_carousel_wrap> 
-
-    <ngb-carousel  class="ngb_car"  >
-        <ng-template ngbSlide *ngFor="let pet of petalk_pets" >
+   
+    <ngb-carousel  class="ngb_car" *ngIf="has_pets; else display_no_pets">
+      <ng-container > 
+        <ng-template  #display_pets ngbSlide *ngFor="let pet of petalk_pets" >
 
           <div class="picsum-img-wrapper">
             
@@ -22,6 +23,20 @@
         
         </ng-template>
 
+
+
+      </ng-container>
+    
+        
       </ngb-carousel>
+
+
+      <ng-template #display_no_pets> 
+
+        <div id="your_pet_box_container" >
+          <h1> There are no pets</h1>
+
+      </div>
+      </ng-template>
 </div>
 

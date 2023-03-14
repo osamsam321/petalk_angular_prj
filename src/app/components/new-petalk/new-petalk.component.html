@@ -1,3 +1,182 @@
-<form> 
-    <button #tstButton id="tstButton"> click to add new pet </button>
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pet Registration Form</title>
+    <style>
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      .radio_cont_flex
+      {
+        display: flex;
+        flex-direction: row;
+      }
+      .label_for_radio
+      {
+        margin-left: 10px;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="height"],
+      input[type="width"],
+      input[type="length"],
+      input[type="color"],
+      select {
+        width:  60%;
+        padding: 20px;
+        margin-left: 0px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+        background-color: rgb(234, 234, 234);
+
+      }
+      input[type = 'radio']
+      {
+        width: 25px;
+        height: 25px;
+        margin-left: 25px;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .input_flex_container
+      {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .input_element_flex_col
+      {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 5%;
+        width: 40%;
+      }
+      .input_element_flex_row
+      {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 5%;
+        width: 50%;
+      }
+
+
+      #submit_form
+      {
+        width: 250px;
+        height: 70px;
+        background-color: greenyellow;
+      }
+      #main_form_container
+      {
+        margin: auto;
+        background-color: rgb(251, 253, 253);
+        border: 2px solid rgb(244, 255, 251);
+        width: 70%;
+        height: 100%;
+        margin-top: 2.5%;
+      }
+      ::selection {
+        background-color: #94be45;
+        color: #fff;
+      }
+      #main_top_img
+      {
+        width: 400px;
+        height: 200px;
+        border-radius: 10px;
+        margin-bottom: 5%;
+        background-color: transparent;
+      }
+    </style>
+  </head>
+
+
+  <body>
+      <div id="main_form_container">  
+        <div class ="input_flex_container"> <img id='main_top_img' src="../../../assets/img/test_img/193-1931235_logo-pet-clinic-logo.png"> </div>
+            <div class ="input_flex_container"><h1>Pet Registration Form</h1> </div>
+            <form>
+                
+                <div class="input_flex_container">
+                   <div class="input_element_flex_col">  
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div> 
+                    <div class ="input_element_flex_col">  
+                        <label for="species">Species:</label>
+                        <select id="species" name="species">
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="bird">Bird</option>
+                            <option value="fish">Fish</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+            
+                <div class="input_flex_container"> 
+                        <div class="input_element_flex_col">  
+                             <label for="height">Height (in cm):</label>
+                             <input type="number" id="height" name="height" min="0" step="0.1" required> 
+                        </div>
+                        <div class="input_element_flex_col">  
+                            <label for="length">Length (in cm):</label>
+                            <input type="number" id="length" name="length" min="0" step="0.1" required> 
+                        </div> 
+                </div>
+                
+                     
+                <div class="input_flex_container">    
+                    <div class="input_element_flex_col">  
+                        <label for="width">Width (in cm):</label>
+                        <input type="number" id="width" name="width" min="0" step="0.1" required> 
+                    </div>
+                    <div class="input_element_flex_col">  
+                        <label for="color">Color:</label>
+                        <input type="text" id="color" name="color" required>  
+                    </div>
+                </div>
+
+                <div class="input_flex_container">  
+                    <div class="input_element_flex_row">  
+                        <label for="weight">Weight:</label>
+                        <input type="number" id="weight" name="weight" min="0" step="0.1" required>
+                      <div class="radio_cont_flex"> 
+                        <input type="radio" id="weight_lb" name ='weight_measurement' value="lb">
+                        <label class = 'label_for_radio' for="weight_lb">lb</label>
+
+                        <input  type="radio" id="weight_kg" name ='weight_measurement' value="kg">
+                        <label class = 'label_for_radio' for="weight_kg">kg</label>
+
+                      </div>
+                       
+                    </div>
+                </div>
+             
+                <div class="input_flex_container">  
+                  <div class="input_element_flex_col">  
+                      <button id="submit_form"> Submit</button>
+                  </div>
+              </div>
+            </form>
+          </div>
+  </body>
+</html>
