@@ -18,6 +18,7 @@ import { YourPetCarouselComponent } from './components/your-pet-carousel/your-pe
 import LoginComponent from './components/login/login.component';
 import { PetalkCalendarComponent } from './components/petalk-calendar/petalk-calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { ContactComponent } from './components/contact/contact.component';
 
 // import { MainNavComponent } from './components/main-nav/main-nav.component';
 
@@ -34,7 +35,8 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     PetEventBoxSimpleComponent,
     YourPetCarouselComponent,
     LoginComponent,
-    PetalkCalendarComponent
+    PetalkCalendarComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +56,10 @@ import { FullCalendarModule } from '@fullcalendar/angular';
       {
         path: 'petalk_calendar',
         component: PetalkCalendarComponent
+      },
+      {
+        path: 'contact',
+        component: ContactComponent
       },
       {
         path: 'new-petalk',

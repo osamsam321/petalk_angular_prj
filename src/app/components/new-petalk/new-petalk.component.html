@@ -3,13 +3,18 @@
   <head>
     <title>Pet Registration Form</title>
     <style>
+      html
+      {
+        box-sizing: border-box;
+      }
       body{
         background-image: url("../../../assets/img/test_img/360_F_298201821_e90YxH0f6FBwOvcKhynlwF8sNYxlCMsg.jpg");
-        background-size: cover;
+        background-size: 100vw 125vh;
         background-position: center;
-        width: 100vw;
+        width: 100%;
         margin: auto;
-        height: 150vh;
+        height: 100vh;
+        box-sizing: border-box;
       }
       label {
         display: block;
@@ -112,8 +117,9 @@
         background-color: rgba(251, 253, 253, 1);
         border: 2px solid rgb(244, 255, 251);
         width: 70%;
-        height: 150%;
+        height: 125%;
         margin-top: .25%;
+        box-sizing: border-box;
       }
     
       #main_top_img
@@ -129,7 +135,72 @@
 
 
   <body>
-    
+    <!-- <ngb-carousel #testngb   >
+      <ng-template ngbSlide >
+
+        <div class="picsum-img-wrapper">
+
+
+                  <div class="input_flex_container">
+                   <div class="input_element_flex_col">  
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    </div> 
+                    <div class ="input_element_flex_col">  
+                        <label for="species">Species:</label>
+                        <select id="species" name="species">
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="bird">Bird</option>
+                            <option value="fish">Fish</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+        </div>
+
+        
+
+       
+        <div class="carousel-caption">
+
+        </div>
+      
+      </ng-template>
+
+      <ng-template ngbSlide >
+
+        <div class="picsum-img-wrapper">
+
+
+                  <div class="input_flex_container">
+                   <div class="input_element_flex_col">  
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    </div> 
+                    <div class ="input_element_flex_col">  
+                        <label for="species">Species:</label>
+                        <select id="species" name="species">
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="bird">Bird</option>
+                            <option value="fish">Fish</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+        </div>
+
+        
+
+       
+        <div class="carousel-caption">
+
+        </div>
+      
+      </ng-template>
+    </ngb-carousel> -->
+
       <div id="main_form_container">  
         <div class ="input_flex_container"> <img id='main_top_img' src="../../../assets/img/test_img/193-1931235_logo-pet-clinic-logo.png"> </div>
             <div class ="input_flex_container"><h3>Pet Registration Form</h3> </div>
