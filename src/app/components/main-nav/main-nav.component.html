@@ -4,6 +4,7 @@
             <!-- <div id="link_container"> <h2 > Your Petalk</h2> </div> -->
             <div id = 'link_container'>  <a routerLink="/new-petalk" >New Pet </a>  </div>
             <div id = 'link_container'>  <a routerLink="/contact">Contact </a>  </div>  
-            <div id = 'link_container'> <a routerLink="/petalk_calendar">Calendar </a>  </div>  
+            <div id = 'link_container'> <a routerLink="/petalk_calendar">Calendar </a>  </div> 
+            <input type="checkbox" [checked]="darkMode$ | async" (change)="onToggle()"/> 
      </div>
 </nav>
