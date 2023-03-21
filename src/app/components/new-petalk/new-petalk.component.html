@@ -204,16 +204,16 @@
       <div id="main_form_container">  
         <div class ="input_flex_container"> <img id='main_top_img' src="../../../assets/img/test_img/193-1931235_logo-pet-clinic-logo.png"> </div>
             <div class ="input_flex_container"><h3>Pet Registration Form</h3> </div>
-            <form id="petalk_pet_form">
+            <form #petalk_pet_form = 'ngForm' id="petalk_pet_form" (ngSubmit)="submitNewPetalkPet(petalk_pet_form)" >
                 
                 <div class="input_flex_container">
                    <div class="input_element_flex_col">  
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                        <input type="text" id="name" name="pet_name" required placeholder="Enter your name" ngModel = 'pet_name'>
                     </div> 
                     <div class ="input_element_flex_col">  
                         <label for="species">Species:</label>
-                        <select id="species" name="species">
+                        <select id="species" name="species" ngModel = 'species'>
                             <option value="dog">Dog</option>
                             <option value="cat">Cat</option>
                             <option value="bird">Bird</option>
@@ -227,11 +227,11 @@
                 <div class="input_flex_container"> 
                         <div class="input_element_flex_col">  
                              <label for="height">Height:</label>
-                             <input type="number" id="height" name="height" min="0" step="0.1" required placeholder="Enter a number"> 
+                             <input type="number" id="height" name="pet_height" ngModel ='pet_height' min="0" step="0.1" required placeholder="Enter a number"> 
                         </div>
                         <div class="input_element_flex_col">  
                             <label for="length">Length:</label>
-                            <input type="number" id="length" name="length" min="0" step="0.1" required placeholder="Enter a number"> 
+                            <input type="number" id="length" name="pet_length" ngModel ='pet_length' min="0" step="0.1" required placeholder="Enter a number"> 
                         </div> 
                 </div>
                 
@@ -239,12 +239,12 @@
                 <div class="input_flex_container">    
                     <div class="input_element_flex_col">  
                         <label for="width">Width:</label>
-                        <input type="number" id="width" name="width" min="0" step="0.1" required placeholder="Enter a number"> 
+                        <input type="number" id="width" name="pet_width" ngModel = 'pet_width' min="0" step="0.1" required placeholder="Enter a number"> 
                     </div>
                     
                     <div class="input_element_flex_col">  
                       <label for="weight">weight:</label>
-                      <input type="weight" id="weight" name="weight" min="0" step="0.1" required placeholder="Enter a number"> 
+                      <input type="weight" id="weight" name="pet_weight" ngModel = 'pet_weight' min="0" step="0.1" required placeholder="Enter a number"> 
                   </div>
                 </div>
 
@@ -254,7 +254,7 @@
                 <div class="input_flex_container">  
                   <div class="input_element_flex_col"> 
                     <label for="measurement">measurement type type:</label>
-                    <select id="measurement" name="measurement">
+                    <select id="measurement" name="lwh_uom_abbr" ngModel= 'lwh_uom_abbr'>
                         <option value="inches">inches</option>
                         <option value="centimeters">centimeters</option>
                       
@@ -262,7 +262,7 @@
                   </div>
                   <div class="input_element_flex_col"> 
                   <label for="weight">weight type:</label>
-                  <select id="weight" name="weight">
+                  <select id="weight" name="weight_uom_abbr" ngModel = 'weight_uom_abbr'>
                       <option value="weight">pounds (lb)</option>
                       <option value="kilograms">kilograms (kg)</option>
                     
@@ -275,11 +275,11 @@
               <div class="input_flex_container">    
                 <div class="input_element_flex_col">  
                   <label for="color">Color:</label>
-                  <input type="text" id="color" name="color" required placeholder="Enter the color">  
+                  <input type="text" id="color" name="color" required placeholder="Enter the color" ngModel = 'color'>  
               </div>
               <div class="input_element_flex_col">  
                 <label for="age">age:</label>
-                <input type="age" id="age" name="age" min="1" step="1" required placeholder="Enter a number"> 
+                <input type="age" id="age" name="age" min="1" step="1" required placeholder="Enter a number" ngModel = 'age'> 
             </div>
             </div>
 
